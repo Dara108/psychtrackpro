@@ -1,0 +1,8 @@
+{
+  "name": "PsycheTrack Pro",
+  "description": "A professional clinical tool for psychiatrists to manage patients, conduct standardized rating scale assessments (PHQ-9, GAD-7), and receive AI-powered longitudinal analysis and clinical insights.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
