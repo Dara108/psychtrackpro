@@ -374,9 +374,8 @@ const App: React.FC = () => {
           ) : isAddingPatient ? (
             <div className="max-w-2xl mx-auto py-12">
                <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-                <div className="bg-slate-900 p-8 text-white relative">
-                  <button onClick={() => setIsAddingPatient(false)} className="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors"><X size={24} /></button>
-                  <UserPlus className="text-indigo-400 mb-4" size={32} />
+                <div className="bg-indigo-600 p-8 text-white relative">
+                  <button onClick={() => setIsAddingPatient(false)} className="absolute top-6 right-6 text-indigo-100 hover:text-white transition-colors"><X size={24} /></button>
                   <h2 className="text-2xl font-bold">Registration</h2>
                 </div>
                 <form onSubmit={handleAddPatient} className="p-8 space-y-6">
