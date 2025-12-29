@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Patient, ScaleType } from '../types';
-import { User, Activity, Calendar } from 'lucide-react';
+import { User, Calendar } from 'lucide-react';
 
 interface PatientCardProps {
   patient: Patient;
@@ -15,7 +14,7 @@ const PatientCard: React.FC<PatientCardProps> = ({ patient, onSelect }) => {
   return (
     <div 
       onClick={() => onSelect(patient)}
-      className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-shadow cursor-pointer group"
+      className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-shadow cursor-pointer group relative"
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center space-x-3">

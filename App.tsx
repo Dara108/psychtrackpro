@@ -6,24 +6,17 @@ import HistoryChart from './components/HistoryChart';
 import { analyzePatientData, generateScaleFromAI } from './services/gemini';
 import { SCALES } from './constants';
 import { 
-  Users, 
-  ClipboardList, 
-  TrendingUp, 
-  BrainCircuit, 
   Plus, 
   Search, 
-  Settings, 
   ArrowLeft, 
   ChevronRight, 
   Info, 
   Loader2, 
   X, 
-  UserPlus,
   ClipboardCheck,
   Home,
   Trash2,
   Globe,
-  ExternalLink,
   Sparkles
 } from 'lucide-react';
 
@@ -211,9 +204,6 @@ const App: React.FC = () => {
         <header className="bg-white border-b border-slate-200 px-8 py-4 flex items-center justify-between z-10">
           <div className="flex items-center space-x-8">
             <button onClick={resetViews} className="flex items-center space-x-3 group outline-none">
-              <div className="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
-                <BrainCircuit className="text-white" size={20} />
-              </div>
               <span className="text-xl font-bold tracking-tight text-slate-900">
                 PsycheTrack<span className="text-indigo-600">Pro</span>
               </span>
@@ -253,7 +243,7 @@ const App: React.FC = () => {
             <div className="flex items-center space-x-3">
               <button 
                 onClick={resetViews}
-                className="p-2 text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all" 
+                className="p-2 text-slate-400 hover:text-indigo-600 hover:bg-slate-50 rounded-lg transition-all" 
                 title="Home / Patient Directory"
               >
                 <Home size={20} />
@@ -416,24 +406,16 @@ const App: React.FC = () => {
               
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 min-w-0 overflow-hidden">
-                  <h2 className="text-lg font-bold text-slate-900 flex items-center mb-6">
-                    <TrendingUp size={20} className="mr-2 text-indigo-500" />
+                  <h2 className="text-lg font-bold text-slate-900 mb-6">
                     Clinical Trajectory
                   </h2>
                   <HistoryChart results={selectedPatient.history} />
                 </div>
                 <div className="bg-white rounded-2xl shadow-sm border border-slate-200 flex flex-col min-w-0">
                   <div className="p-6 border-b border-slate-100 bg-indigo-50/30 rounded-t-2xl flex justify-between items-center">
-                    <h2 className="text-lg font-bold text-slate-900 flex items-center">
-                      <BrainCircuit size={20} className="mr-2 text-indigo-600" />
+                    <h2 className="text-lg font-bold text-slate-900">
                       Gemini Insights
                     </h2>
-                    {analysis?.sources && (
-                      <span className="flex items-center text-[10px] font-bold text-indigo-500 uppercase bg-indigo-100 px-2 py-1 rounded">
-                        <Globe size={12} className="mr-1" />
-                        Verified
-                      </span>
-                    )}
                   </div>
                   <div className="p-6 flex-1">
                     {isAnalyzing ? (
@@ -468,10 +450,9 @@ const App: React.FC = () => {
                                   href={source.uri} 
                                   target="_blank" 
                                   rel="noopener noreferrer" 
-                                  className="flex items-center text-[11px] text-indigo-600 hover:text-indigo-800 transition-colors bg-indigo-50/50 p-2 rounded-lg border border-indigo-100"
+                                  className="block text-[11px] text-indigo-600 hover:text-indigo-800 transition-colors bg-indigo-50/50 p-2 rounded-lg border border-indigo-100"
                                 >
-                                  <ExternalLink size={10} className="mr-2 flex-shrink-0" />
-                                  <span className="truncate">{source.title}</span>
+                                  <span className="truncate block w-full">{source.title}</span>
                                 </a>
                               ))}
                             </div>
